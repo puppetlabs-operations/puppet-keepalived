@@ -171,13 +171,13 @@ define keepalived::vrrp::instance (
   if (!is_integer($priority)){
     fail('priority must be an integer 1 >= and <= 254')
   }
-  if ($priority < 1 or $priority > 254) {
+  if (($priority + 0) < 1 or ($priority + 0) > 254) {
     fail('priority must be an integer 1 >= and <= 254')
   }
   if (!is_integer($virtual_router_id)) {
     fail('virtual_router_id must be an integer >= 1 and <= 255')
   }
-  if ($virtual_router_id < 1 or $virtual_router_id > 255) {
+  if (($virtual_router_id + 0) < 1 or ($virtual_router_id + 0) > 255) {
     fail('virtual_router_id must be an integer >= 1 and <= 255')
   }
 
